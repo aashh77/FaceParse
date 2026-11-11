@@ -2,7 +2,7 @@
 
 A U²-Net model trained to assign each pixel of a face image to one of 11 classes: background, skin, left and right eyebrow, left and right eye, nose, upper lip, inner mouth, lower lip and hair. The model is implemented in PyTorch, trained from scratch on the LaPa dataset, and run on a free Google Colab T4 GPU.
 
-This repository contains the baseline version. It is kept intentionally simple to provide a measured reference point for later improvements (see "Limitations and Future Work").
+This repository contains the baseline version. It is kept intentionally simple to provide a measured reference point for later improvements.
 
 ## Results
 
@@ -74,18 +74,3 @@ evaluate.py    final test-set evaluation
 results/       baseline metrics and training curves
 ```
 
-## Limitations and Future Work
-
-The per-class results indicate where improvement is most likely. Planned changes will be applied one at a time and measured on the same validation and test splits:
-
-- Data augmentation
-- A loss function that weights small classes more heavily (Dice or class-weighted cross-entropy)
-- Higher input resolution (256×256)
-- Training on all 18,176 images with a learning-rate schedule
-
-Each change will be reported as a separate row in a results table. An interactive demo for uploading an image and viewing the predicted segmentation is also planned.
-
-## References
-
-- Qin et al., *U²-Net: Going Deeper with Nested U-Structure for Salient Object Detection*, Pattern Recognition, 2020.
-- Liu et al., *A New Dataset and Boundary-Attention Semantic Segmentation for Face Parsing*, AAAI 2020. Dataset available at [github.com/JDAI-CV/lapa-dataset](https://github.com/JDAI-CV/lapa-dataset) for non-commercial use.
